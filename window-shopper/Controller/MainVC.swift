@@ -14,6 +14,10 @@ class MainVC: UIViewController {
     @IBOutlet weak var wageTxt: CustomTxtField!
     @IBOutlet weak var priceTxt: CustomTxtField!
     
+    @IBOutlet weak var resultLb: UILabel!
+    
+    @IBOutlet weak var hoursLbl: UILabel!
+    
     //variables
     
     override func viewDidLoad() {
@@ -33,11 +37,40 @@ class MainVC: UIViewController {
         wageTxt.inputAccessoryView = calcBtn
         priceTxt.inputAccessoryView = calcBtn
         
+        //Intially hidden
+        resultLb.isHidden = true
+        hoursLbl.isHidden = true
+        
     }
     
     @objc func calculate() {
-        print("Hi there")
+        
+        //to hide keyboard
+        view.endEditing(true)
+        
+        //(1)first check to guarantee the textfields are not empty
+        //(2)second check to guarantee the input in fields is valid to casting it to diuble because we don't know maybe the user copy and paste the input from safari or anywhere
+        if let wageText = wageTxt.text, let priceText = priceTxt.text {
+            
+            if let wage = Double(wageText), let price = Double(priceText) {
+                
+                resultLb.text = ("\(Wage.claculateHours(forWage: wage, withPrice: price))")
+                
+                //let's unhidden Lbls
+                resultLb.isHidden = false
+                hoursLbl.isHidden = false
+            }
+        }
     }
+    
+    @IBAction func clearCalculator(_ sender: UIButton) {
+        
+        wageTxt.text = ""
+        priceTxt.text = ""
+        resultLb.isHidden = true
+        hoursLbl.isHidden = true
+    }
+    
 
 
 }

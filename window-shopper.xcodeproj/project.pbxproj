@@ -85,8 +85,9 @@
 				4C0BA46B22979D6B0034B779 /* Model */,
 				4C0BA46A22979D5D0034B779 /* View */,
 				4C0BA46C22979D820034B779 /* Controller */,
-				4C0BA46D22979D9B0034B779 /* Support */,
 				4C0BA46422979BBE0034B779 /* Info.plist */,
+				4C0BA46D22979D9B0034B779 /* Support */,
+				4CCB8935229892CC0060ACEF /* Customs */,
 			);
 			path = "window-shopper";
 			sourceTree = "<group>";
@@ -103,7 +104,6 @@
 		4C0BA46B22979D6B0034B779 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4C0BA46E2297A3E00034B779 /* CustomTxtField.swift */,
 				4CCB89322297CB5E0060ACEF /* Wage.swift */,
 			);
 			path = Model;
@@ -133,6 +133,15 @@
 				4CCB892C2297CB390060ACEF /* Info.plist */,
 			);
 			path = "window-shopperTests";
+			sourceTree = "<group>";
+		};
+		4CCB8935229892CC0060ACEF /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				4C0BA46E2297A3E00034B779 /* CustomTxtField.swift */,
+			);
+			name = Customs;
+			path = "ئعسفخوس";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
