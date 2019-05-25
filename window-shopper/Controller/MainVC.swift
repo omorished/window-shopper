@@ -43,6 +43,11 @@ class MainVC: UIViewController {
         
     }
     
+    //to change status bar to white
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    } 
+    
     @objc func calculate() {
         
         //to hide keyboard
